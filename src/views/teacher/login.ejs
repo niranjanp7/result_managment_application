@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/teacher.css">
+    </head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <div class="content">
+            <form class="form" action="/teacher" method="post">
+                <span class="form-title">Teacher Login Form</span>
+                <div class="row">
+                    <div class="col-1">
+                        Username
+                    </div>
+                    <div class="col-2">
+                        <input class="inp w-100" type="test" id="username" name="username" placeholder="Username" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        Password
+                    </div>
+                    <div class="col-2">
+                        <input class="inp w-100" type="password" name="password" id="password" placeholder="Password" required>
+                    </div>
+                </div>
+                <% if (status != 200) { %>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-2">
+                            <span class="err-msg"><%= message %></span>
+                        </div>
+                    </div>
+                <% } %>
+                <div class="row">
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-info w-50">Login</button>
+                    </div>
+                    <div class="col-1 j-start">
+                        <button type="reset" class="btn btn-secondary w-50">Clear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

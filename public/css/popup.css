@@ -1,0 +1,58 @@
+.popup {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #0004;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup .popup-body {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 40%;
+    max-width: 460px;
+    max-height: 220px;
+    border-radius: 8px;
+    padding-inline: 8px;
+}
+
+.popup-header {
+    display: flex;
+    flex: 0.5;
+    align-items: center;
+}
+
+.popup-title {
+    flex: 1;
+}
+
+.popup-close {
+    width: 24px;
+    height: 24px;
+}
+
+.popup-footer {
+    display: flex;
+    flex: 0.5;
+    align-items: center;
+    justify-content: end;
+    gap: 8px;
+}
+
+.popup-content {
+    flex: 1;
+    padding-block: 8px;
+}
+
+.popup-separator {
+    display: block;
+    background: #d1d5db;
+    width: 100%;
+    height: 1px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/teacher.css">
+        <link rel="stylesheet" href="/css/popup.css">
+    </head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <div class="content">
+            <div class="row">
+                <div class="col-2">
+                    <span>Total <span id="recordCount"><%= students.length %></span> students</span>
+                </div>
+                <div class="col-1">
+                    <a href="/teacher/edit"><button class="btn btn-info">Add Record</button></a>
+                </div>
+            </div>
+            <table class="data-table" border="2px" id="studentList">
+                <thead>
+                    <tr>
+                        <th>Roll No.</th>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th>Score</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let student of students) { %>
+                        <tr id="rollNo<%= student.rollNo %>">
+                            <td><%= student.rollNo %></td>
+                            <td><%= student.name %></td>
+                            <td><%= student.dob %></td>
+                            <td><%= student.score %></td>
+                            <td>
+                                <div class="row j-space-ev">
+                                    <form action="/teacher/edit" method="get">
+                                        <input type="hidden" name="rollNo" value="<%= student.rollNo %>">
+                                        <button class="btn btn-icon p-0"><object data="/img/pencil-outline.svg" type="image/svg+xml" alt="logout icon"></object></button>
+                                    </form>
+                                    <button class="btn btn-icon p-0" id="deleteRec" data-rollno="<%= student.rollNo %>"><object data="/img/close.svg" type="image/svg+xml" alt="logout icon"></object></button>
+                                </div>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
+    <script src="/js/popup.js"></script>
+    <script src="/js/teacher.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "result_managment_application",
+  "version": "1.0.0",
+  "description": "Nagarro bench training project based on nodejs and expressjs to display result of students, search, edit and delete functions. User side to be done using HTML, CSS and JS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "nodemon": "nodemon index.js",
+    "bs": "browser-sync start --config bs-config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "niranjan.pandit",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mysql2": "^3.6.0",
+    "sequelize": "^6.32.1",
+    "sequelize-cli": "^6.6.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "nodemon": "^3.0.1"
+  }
+}

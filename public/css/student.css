@@ -1,0 +1,18 @@
+.form {
+    min-width: 576px;
+    padding: 24px;
+    background: #00000010;
+    border-radius: 8px;
+}
+
+.form-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.err-msg {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: #dc2626;
+}

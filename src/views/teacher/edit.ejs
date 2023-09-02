@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/teacher.css">
+    </head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <div class="content">
+            <form class="form" action="/teacher/edit" method="post">
+                <span>Add New Result</span>
+                <div class="row">
+                    <div class="col-1">
+                        Roll No.
+                    </div>
+                    <div class="col-2">
+                        <input class="inp w-100" type="number" id="rollNo" name="rollNo" placeholder="12345" value="<%= student.rollNo %>" required <% if (student.rollNo !== "") { %>readonly<% } %>>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        Name
+                    </div>
+                    <div class="col-2">
+                        <input class="inp w-100" type="text" id="name" name="name" placeholder="John Dew" value="<%= student.name %>" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        Date of Birth
+                    </div>
+                    <div class="col-2">
+                        <input class="inp w-100" type="date" id="dob" name="dob" value="<%= student.dob %>" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        Score
+                    </div>
+                    <div class="col-2">
+                        <input class="inp w-100" type="number" id="score" name="score" placeholder="40" min="0" max="100" value="<%= student.score %>" required>
+                    </div>
+                </div>
+                <% if (status != 200) { %>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-2">
+                            <span class="err-msg"><%= message %></span>
+                        </div>
+                    </div>
+                <% } %>
+                <div class="row">
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-info w-50">Submit</button>
+                    </div>
+                    <div class="col-1 j-start">
+                        <button type="reset" class="btn btn-secondary w-50">Clear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
+    <script src="/js/teacher.js"></script>
+</body>
+</html>

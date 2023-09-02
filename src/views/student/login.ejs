@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../partials/head') %>
+        <link rel="stylesheet" href="./css/student.css">
+    </head>
+<body>
+    <%- include('../partials/header') %>
+    <main>
+        <div class="content">
+            <form class="form" action="/student" method="post">
+                <span class="form-title">Find Result</span>
+                <div class="row">
+                    <div class="col-1">
+                        Roll No.
+                    </div>
+                    <div class="col-2">
+                        <input class="inp w-100" type="number" id="rollNo" name="rollNo" placeholder="123456" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        Date of Birth
+                    </div>
+                    <div class="col-2">
+                        <input class="inp w-100" type="date" name="dob" id="dob" required>
+                    </div>
+                </div>
+                <% if (status != 200) { %>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-2">
+                            <span class="err-msg"><%= message %></span>
+                        </div>
+                    </div>
+                <% } %>
+                <div class="row">
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-info w-50">Search</button>
+                    </div>
+                    <div class="col-1 j-start">
+                        <button type="reset" class="btn btn-secondary w-50">Clear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

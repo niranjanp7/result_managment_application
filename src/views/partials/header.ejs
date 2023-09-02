@@ -1,0 +1,14 @@
+<header>
+    <nav class="nav">
+        <span>Result Management System</span>
+
+        <% if (typeof loggedin !== "undefined") { %>
+            <a class="btn-logout" href="/">
+                <button class="btn btn-danger btn-icon" type="submit">
+                    <span>Logout</span>
+                    <object data="/img/shield-lock-open.svg" type="image/svg+xml" alt="logout icon"></object>
+                </button>
+            </a>
+        <% } %>
+    </nav>
+</header>
